@@ -3,7 +3,13 @@ const socket=io("/");
 
 const videoGrid=document.getElementById("video-grid");
 
-const myPeer =new Peer(undefined,{
+const myPeer =new Peer({
+    iceServers:[
+        {
+            urls:"stun:stun.stunprotocol.org"
+        }
+    ]
+},{
     host:"/",
     port:"3001"
 })
